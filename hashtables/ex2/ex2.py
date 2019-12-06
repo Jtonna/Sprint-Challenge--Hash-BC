@@ -48,6 +48,6 @@ def reconstruct_trip(tickets, length):
     for each_ticket in range(1, length):
         # Since we already have the origin ticket we can just subtract 1 from it to get the key of the next ticket
         # we then save that as the next ticket in the route
-        route[each_ticket] = hash_table_retrieve(hashtable, route[each_ticket] - 1)
+        route[each_ticket] = hash_table_retrieve(hashtable, route[each_ticket - 1])
 
     return route
