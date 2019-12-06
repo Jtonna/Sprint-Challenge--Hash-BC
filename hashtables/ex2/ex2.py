@@ -42,7 +42,8 @@ def reconstruct_trip(tickets, length):
         hash_table_insert(hashtable, flying_from, flying_to)
     
     # Finds the ticket with its source as "None", since its the origin ticket
-    route[0] = hash_table_retrieve(hashtable, "None")
+    # Then sets that ticket in the Route array at index 0
+    route[0] = hash_table_retrieve(hashtable, "NONE")
 
     # Loop over the rest of the table
     for each_ticket in range(1, length):
