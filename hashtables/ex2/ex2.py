@@ -17,7 +17,24 @@ def reconstruct_trip(tickets, length):
     route = [None] * length
 
     """
-    YOUR CODE HERE
+    let key = source
+    let value = destination
+
+    for each individual ticket in range(len(tickets))
+        insert the source and destination as the key & value
+    
+    find the key with None as the value as that is the source of the journey
+        pass that value key:value pair to route[0]
+    ^^
+    ^ ---- Could be done in one line as a variable assignment
+    
+    for each item we look at in the loop of the hash table
+        pass that value:key pair to route
+        ^^
+        ^ ---- also a one line variable assignment
+
     """
+
+    
 
     return route
