@@ -47,7 +47,19 @@ def valid_proof(last_hash, proof):
     """
 
     # TODO: Your code here!
-    pass
+
+    # We are going to set the last hash to the hex digested version of its sha256 output for use when we return
+    last_hash = hashlib.sha256(last_hash).hexdigest()
+    
+    # Encode the proof and allow it to be digested for comparison
+    guess = f"{proof}".encode()
+    guessifier = hashlib.sha256(guess).hexdigest()
+
+    # now we are going to return the comparison of the two digested values
+    # for guessifier its going to be the last six, and then the first six for last_hash
+    return guessifier[:6] == last_hash[-6:]
+
+
 
 
 if __name__ == '__main__':
