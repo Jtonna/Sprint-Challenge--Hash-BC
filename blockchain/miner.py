@@ -25,7 +25,12 @@ def proof_of_work(last_proof):
     print("Searching for next proof")
     proof = 0
 
+
     #  TODO: Your code here
+
+    # Stringify the last proof and encode it
+    last_hash = str(last_proof).encode()
+    
     while valid_proof(last_hash, proof) is False:
         proof +=1
 
