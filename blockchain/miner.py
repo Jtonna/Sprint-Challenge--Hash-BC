@@ -26,10 +26,6 @@ def proof_of_work(last_proof):
     proof = 0
 
     #  TODO: Your code here
-    """
-    Pass the last hash & proof into valid_proof to see if we got a match
-    if its false +1 proof
-    """
     while valid_proof(last_hash, proof) is False:
         proof +=1
 
@@ -53,11 +49,11 @@ def valid_proof(last_hash, proof):
     
     # Encode the proof and allow it to be digested for comparison
     guess = f"{proof}".encode()
-    guessifier = hashlib.sha256(guess).hexdigest()
+    guess_hash = hashlib.sha256(guess).hexdigest()
 
     # now we are going to return the comparison of the two digested values
     # for guessifier its going to be the last six, and then the first six for last_hash
-    return guessifier[:6] == last_hash[-6:]
+    return guess_hash[:6] == last_hash[-6:]
 
 
 
