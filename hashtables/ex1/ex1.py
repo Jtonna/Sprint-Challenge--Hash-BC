@@ -10,10 +10,18 @@ def get_indices_of_item_weights(weights, length, limit):
     ht = HashTable(16)
 
     """
-    YOUR CODE HERE
+    loop over every item in weights (length number of times)
+        insert each item into the hash table
+    
+    loop over every item in weights (length number of times)
+        set a variable that holds -> subtract the limit from the current item we are looking at in this loop.
+        set a variable that holds -> check the hash table for the key (which is the variable above) 
+
+        if the weight is not None
+            return the weight
+
     """
 
-    return None
 
 
 def print_answer(answer):
